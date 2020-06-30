@@ -1,0 +1,59 @@
+from tkinter import *
+
+root=Tk()
+
+
+
+root.geometry("500x280")
+
+root.title("TRAVELS")
+
+root['bg']='#47B'
+
+def hello():
+   print("Form Sucessfully Submitted")
+   
+
+Label(root, text="Welcome To Travel's", bg="yellow", fg="grey", font="Rouge 16 bold", relief=SUNKEN, width=15, padx=25, pady=20).grid(row=0, column=3)
+
+
+
+name=Label(root, text="Name", bg="cornsilk3",padx=6)
+phone=Label(root, text="Phone", bg="cornsilk3", padx=6)
+gender=Label(root, text="Gender", bg="cornsilk3", padx=2)
+age=Label(root, text="Age", bg="cornsilk3", padx=13)
+payment=Label(root, text="Payment Mode", bg="cornsilk3")
+
+
+name.grid(row=1, column=2)
+phone.grid(row=2, column=2)
+gender.grid(row=3, column=2)
+age.grid(row=4, column=2)
+payment.grid(row=5, column=2)
+
+
+namevalue = StringVar()
+phonevalue = StringVar()
+gendervalue = StringVar()
+agevalue = StringVar()
+paymentvalue = StringVar()
+
+
+nameentry=Entry(root,    textvariable=namevalue)
+phoneentry=Entry(root,   textvariable=phonevalue)
+genderentry=Entry(root,  textvariable=gendervalue)
+ageentry=Entry(root,     textvariable=agevalue)
+paymententry=Entry(root, textvariable=paymentvalue)
+
+
+nameentry.grid(row=1, column=3)
+phoneentry.grid(row=2, column=3)
+genderentry.grid(row=3, column=3)
+ageentry.grid(row=4, column=3)
+paymententry.grid(row=5, column=3)
+
+
+Button(root, text="Submit", bg="green2", fg="black", padx=4,command=hello).grid(row=6, column=3)
+
+
+root.mainloop()  #will enter in event loop
