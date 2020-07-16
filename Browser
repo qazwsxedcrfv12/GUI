@@ -1,0 +1,26 @@
+from tkinter import *
+import webbrowser
+
+root=Tk()
+
+root.title("BROWSER")
+
+root.geometry("333x223")
+root['bg']='#23A'
+
+def web():
+   webbrowser.open("www.google.com")
+   
+def web1():
+   webbrowser.open("www.facebook.com")
+
+def web2():
+   webbrowser.open("www.instagram.com")  
+   
+  
+Button(root, text="Google", bg="red",activebackground="grey",fg="yellow",bd="4px",command=web).pack(pady="4px")
+Button(root, text="Facebook", bg="red",activebackground="green", fg="yellow",bd="3px", command=web1).pack(pady="10px")
+Button(root, text="Instagram", bg="red",activebackground="orange", fg="yellow",bd="3px",command=web2).pack(pady="10px")
+
+
+root.mainloop()
