@@ -1,0 +1,24 @@
+from tkinter import *
+import tkinter.messagebox as tsmg
+
+
+root = Tk()
+root.geometry("500x450")
+root.title("Sliders")
+root['bg'] = "#24B"
+
+
+def getdollars():
+    tsmg.showinfo("Amount Credited",
+                  f"We have credited {slider1.get()} dollars in your account")
+
+
+Label(root, text="How many dollars you want to be credited?",
+      bg="red", padx=5, pady=15).pack(pady=15)
+slider1 = Scale(root, from_=0, to=200, orient=HORIZONTAL,tickinterval=100)
+slider1.set(10)
+slider1.pack()
+Button(root, text="Get Dollars", bg="black", padx=20, pady=5,
+       fg="yellow", command=getdollars).pack(padx=5, pady=20)
+
+root.mainloop()
