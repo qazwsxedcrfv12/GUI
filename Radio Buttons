@@ -1,0 +1,34 @@
+from tkinter import *
+import tkinter.messagebox as tsmg
+
+root = Tk()
+root.geometry("500x450")
+root.title("Radio")
+root['bg'] = "#24F"
+
+
+def order():
+    tsmg.showinfo("Order Recieved!!",
+                  f"We have recieved your order for {var.get()}, Thanks for ordering")
+
+
+var = IntVar()
+
+Label(root, text="What would you like to have sir?",
+      bg="grey", padx=5).pack(pady=20)
+
+radio = Radiobutton(root, text="Dosa", bg="yellow",
+                    variable=var, value=1).pack(anchor="w", padx=10)
+radio = Radiobutton(root, text="Briyani", bg="red",
+                    variable=var, value=2).pack(anchor="w", padx=10, pady=10)
+radio = Radiobutton(root, text="Noodles", bg="blue",
+                    variable=var, value=3).pack(anchor="w", padx=10, pady=10)
+radio = Radiobutton(root, text="Burger", bg="lightgreen",
+                    variable=var, value=4).pack(anchor="w", padx=10, pady=10)
+radio = Radiobutton(root, text="Sandwich", bg="orange",
+                    variable=var, value=5).pack(anchor="w", padx=10, pady=10)
+
+Button(root, text="Order Now", command=order).pack()
+
+
+root.mainloop()
