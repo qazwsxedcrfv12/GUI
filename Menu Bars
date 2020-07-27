@@ -1,0 +1,64 @@
+from tkinter import *
+root=Tk()
+root.geometry("722x550")
+root.title("MENU BAR")
+root['bg']='#23A'
+
+def myfunc():
+    print("HEllo")
+
+filemenu=Menu(root)
+m1=Menu(filemenu,bg="red",tearoff=0)
+m1.add_command(label="New File")
+m1.add_command(label="New Window")
+m1.add_separator()
+m1.add_command(label="Open File")
+m1.add_command(label="Open Workspace")
+m1.add_command(label="Open Folder")
+m1.add_separator()
+m1.add_command(label="Save")
+m1.add_command(label="Save As...")
+
+m2=Menu(filemenu,bg="green",tearoff=0)
+m2.add_command(label="Undo")
+m2.add_command(label="Redo")
+m2.add_separator()
+m2.add_command(label="Cut")
+m2.add_command(label="Copy")
+m2.add_command(label="Paste")
+m2.add_separator()
+m2.add_command(label="Find")
+m2.add_command(label="Replace")
+
+m3=Menu(filemenu,bg="yellow",tearoff=0)
+m3.add_command(label="Select All")
+m3.add_command(label="Expand")
+m3.add_separator()
+m3.add_command(label="Copy LineUp")
+m3.add_command(label="Copy LineDown")
+m3.add_command(label="Move LineUp")
+m3.add_separator()
+m3.add_command(label="Add Cursor Above")
+m3.add_command(label="Add cursor Below")
+
+m4=Menu(filemenu,bg="orange",tearoff=0)
+m4.add_command(label="Appearence")
+m4.add_command(label="Layout")
+m4.add_separator()
+m4.add_command(label="Search")
+m4.add_command(label="SCM")
+m4.add_command(label="Run")
+m4.add_separator()
+m4.add_command(label="Extensions")
+m4.add_command(label="Terminal")
+
+
+
+root.config(menu=filemenu)
+
+filemenu.add_cascade(label="File",menu=m1)
+filemenu.add_cascade(label="Edit",menu=m2)
+filemenu.add_cascade(label="Selection",menu=m3)
+filemenu.add_cascade(label="View",menu=m4)
+
+root.mainloop()
